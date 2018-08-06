@@ -111,10 +111,10 @@ $(function() {
         beforeEach(function(done) {
             loadFeed(0, function() {
                 firstFeed = feed.textContent;
-            });
-            loadFeed(1, function() {
-                secondFeed = feed.textContent;
-                done();
+                loadFeed(1, function() {
+                    secondFeed = feed.textContent;
+                    done();
+                });
             });
          });
 
