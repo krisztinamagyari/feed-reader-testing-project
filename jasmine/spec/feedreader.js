@@ -32,8 +32,8 @@ $(function() {
          */
          it('url should be defined', function() {
             for(let feed of allFeeds) {
-            expect(feed.url).toBeDefined();
-            expect(feed.url.length).not.toBe(0);
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toBe(0);
             }
          });
 
@@ -101,6 +101,8 @@ $(function() {
 
     describe('New Feed Selection', function() {
         const feed = document.querySelector('.feed');
+        let firstFeed;
+        let secondFeed;
         /* The test ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
