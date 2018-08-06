@@ -50,10 +50,9 @@ $(function() {
 
     });
 
-
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
-
+        const body = document.querySelector('body');
         /* TODO: Write a test that ensures the menu element is
         * hidden by default. You'll have to analyze the HTML and
         * the CSS to determine how we're performing the
@@ -61,7 +60,6 @@ $(function() {
         */
 
         it('should be hidden by default', function() {
-            const body = document.querySelector('body');
             expect(body.classList.contains('menu-hidden')).toBe(true);
         });
 
@@ -71,9 +69,7 @@ $(function() {
         * clicked and does it hide when clicked again.
         */
         it('should change visibility on clicking', function() {
-            const body = document.querySelector('body');
             const hamburger = document.querySelector('.menu-icon-link');
-
             //Testing for menu being displayed
             hamburger.click();
             expect(body.classList.contains('menu-hidden')).toBe(false);
@@ -82,7 +78,6 @@ $(function() {
             hamburger.click();
             expect(body.classList.contains('menu-hidden')).toBe(true);
         });
-
 
     });
 
@@ -98,10 +93,12 @@ $(function() {
          beforeEach(function(done) {
             loadFeed(0, done);
          });
-         it('work completed', function() {
+
+         it('has at least one element', function() {
             const feed = document.querySelector('.feed');
             expect(feed.children.length).toBeGreaterThan(0);
          });
+
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
@@ -111,7 +108,7 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-         beforeEach(function(done) {
+        beforeEach(function(done) {
             loadFeed(0, function() {
                 firstFeed = feed.textContent;
             });
@@ -121,7 +118,7 @@ $(function() {
             });
          });
 
-         it('new feed should be different', function() {
+         it('should be different', function() {
             expect(secondFeed).not.toEqual(firstFeed);
          });
 
