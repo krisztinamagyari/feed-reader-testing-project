@@ -95,8 +95,8 @@ $(function() {
          });
 
          it('has at least one element', function() {
-            const feed = document.querySelector('.feed');
-            expect(feed.children.length).toBeGreaterThan(0);
+            const feed = document.querySelector('.feed .entry');
+            expect(feed.length).toBeGreaterThan(0);
          });
 
     });
